@@ -5,12 +5,12 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 const Product = ({ product }) => {
-  const [selectedColor, setSelectedColor] = useState(product.cores[0]?.nome)
-  const [selectedSize, setSelectedSize] = useState(product?.tamanho ?? '')
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name)
+  const [selectedSize, setSelectedSize] = useState(product?.size ?? '')
 
   return (
     <section>
-      <h2 className="text-center pb-2">Detalhes de {product.nome}</h2>
+      <h2 className="text-center pb-2">Detalhes de {product.name}</h2>
       <div className={styles.divider}></div>
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
@@ -18,39 +18,39 @@ const Product = ({ product }) => {
             width={350}
             height={422}
             src={product.imageSrc}
-            alt={product.nome}
+            alt={product.name}
             className={styles.productImage}
           />
         </div>
         <div className={styles.info}>
-          <h1 className={styles.title}>{product.nome}</h1>
+          <h1 className={styles.title}>{product.name}</h1>
           <p className={styles.description}>{product.descricao}</p>
           <hr className={styles.divider} />
           <p className={styles.price}>{product.preco}</p>
           <div className={styles.options}>
             <div className={styles.colors}>
-              {product.cores.map((cor) => (
+              {product.colors.map((color) => (
                 <button
-                  key={cor.nome}
-                  style={{ backgroundColor: cor.hexa }}
-                  onClick={() => setSelectedColor(cor.nome)}
-                  aria-label={cor.nome}
+                  key={color.name}
+                  style={{ backgroundColor: color.hexa }}
+                  onClick={() => setSelectedColor(color.name)}
+                  aria-label={color.name}
                   className={`${styles.colorOption} ${
-                    selectedColor === cor.nome && styles.selectedColor
+                    selectedColor === color.name && styles.selectedColor
                   }`}
                 />
               ))}
             </div>
-            {product?.tamanho?.length > 0 && (
+            {product?.size?.length > 0 && (
               <div className={styles.sizes}>
-                {product?.tamanho.map((tamanho) => (
+                {product?.size.map((size) => (
                   <button
-                    key={tamanho}
-                    onClick={() => setSelectedSize(tamanho)}
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
                     className={`${styles.sizeOption} ${
-                      selectedSize === tamanho && styles.selectedSize
+                      selectedSize === size && styles.selectedSize
                     }`}>
-                    {tamanho}
+                    {size}
                   </button>
                 ))}
               </div>

@@ -33,8 +33,8 @@ export const Products = ({ products }) => {
             </figure>
             <section className={styles.info}>
               <p className={styles.titulo}>{product.name}</p>
-              <div className={styles.descricao}>{product.descricao}</div>
-              <div className={styles.preco}>{product.preco}</div>
+              <div className={styles.descricao}>{product.description}</div>
+              <div className={styles.preco}>{product.price}</div>
               <button
                 className={styles.botao}
                 onClick={() => router.push(`/produto/${product.id}`)}>

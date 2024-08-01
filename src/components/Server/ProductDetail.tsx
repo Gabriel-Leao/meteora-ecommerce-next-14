@@ -6,8 +6,8 @@ export const ProductDetail = async ({ slug }) => {
   return (
     <section>
       <h1>{product.name}</h1>
-      <p>{product.descricao}</p>
-      <p>{product.preco}</p>
+      <p>{product.description}</p>
+      <p>{product.price}</p>
     </section>
   )
 }
