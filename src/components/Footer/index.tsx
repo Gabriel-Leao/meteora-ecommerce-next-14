@@ -1,9 +1,8 @@
-import styles from './footer.module.css'
 import SVGIcon from '../SVGIcons'
 
 const FooterItem = ({ iconName, title, description }) => (
-  <div className={styles.footerItem}>
-    <div style={{ width: '72px', height: '72px' }}>
+  <div className="flex gap-6 w-[304px]">
+    <div className="w-[72px] h-[72px]">
       <SVGIcon
         iconName={iconName}
         fill="#000"
@@ -11,18 +10,22 @@ const FooterItem = ({ iconName, title, description }) => (
         height="72"
       />
     </div>
-    <div className={styles.footerDescriptionWrapper}>
-      <h3 className={styles.footerTitle}>{title}</h3>
-      <p className={styles.footerDescription}>{description}</p>
+    <div className="flex flex-col">
+      <h3 className="text-[#daff01] text-[16px] leading-[23px] font-bold">
+        {title}
+      </h3>
+      <p className="text-[13px] leading-5">{description}</p>
     </div>
   </div>
 )
 
 export const Footer = () => {
   return (
-    <section className={styles.footer}>
-      <h3 className={styles.footerHead}>Conheça todas as nossas facilidades</h3>
-      <div className={styles.footerInner}>
+    <section className="text-white bg-black p-10 text-center mt-[30px]">
+      <h3 className="text-[32px] font-medium">
+        Conheça todas as nossas facilidades
+      </h3>
+      <div className="max-w-[800px] m-auto flex justify-around gap-8 items-center">
         <FooterItem
           iconName="diamond"
           title="PAGUE PELO PIX"
