@@ -37,7 +37,7 @@ export const Products = ({ products }) => {
               </div>
               <button
                 className="flex py-[9px] px-4 gap-[10px] text-white text-center text-[16px] cursor-pointer bg-[#9353ff] w-[102px] mt-[10px] hover:bg-[#3700b3]"
-                onClick={() => router.push(`/produto/${product.id}`)}>
+                onClick={() => router.push(`/product/${product.id}`)}>
                 Ver mais
               </button>
             </section>
